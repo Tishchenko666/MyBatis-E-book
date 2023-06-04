@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+        .ited {
+            font-style: italic;
+        }
+
+        .bolded {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, World</h1>
+    <ul th:each="item: ${myMap}">
+        <li th:if="${item.key.startsWith('data')}" th:class="ited" th:text="${item.value}"></li>
+        <li th:if="${item.key.startsWith('test')}" th:class="bolded" th:text="${item.value}"></li>
+    </ul>
+</body>
+</html>
