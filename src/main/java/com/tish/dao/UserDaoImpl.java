@@ -2,12 +2,15 @@ package com.tish.dao;
 
 import com.tish.constant.UserConstant;
 import com.tish.entity.User;
+import com.tish.entity.UserResult;
 import com.tish.mapper.UserMapper;
+import com.tish.mapper.UserResultMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Types;
+import java.util.List;
 
 @Repository
 public class UserDaoImpl implements UserDao {
@@ -29,6 +32,11 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	public void logoutByEmail(String email) {
+		jdbcTemplate.update(UserConstant.LOGOUT_USER, email);
+	}
+
+	@Override
 	public User checkIfLoggedUserExists() {
 		return jdbcTemplate.queryForObject(UserConstant.CHECK_LOGGED_USER, new UserMapper());
 	}
@@ -36,5 +44,15 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void registerUser(User user) {
 		jdbcTemplate.update(UserConstant.REGISTER_USER, user.getLogin(), user.getPassword(), user.getName(), "0", 0);
+	}
+
+	@Override
+	public List<UserResult> readUserResultsById(Integer id) {
+		return jdbcTemplate.query(UserConstant.READ_USER_RESULTS, new Object[]{id}, new int[]{Types.INTEGER}, new UserResultMapper());
+	}
+
+	@Override
+	public void updateUserData(User user) {
+		jdbcTemplate.update(UserConstant.UPDATE_USER_DATA, user.getName(), user.getPassword(), user.getLogin());
 	}
 }

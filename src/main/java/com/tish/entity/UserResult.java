@@ -9,7 +9,8 @@ public class UserResult {
 
 	private Integer id;
 	private Integer userId;
-	private Integer questionId;
+	private String material;
+	private String question;
 	private String answer;
 	private Boolean result;
 
