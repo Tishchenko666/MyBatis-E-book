@@ -2,9 +2,132 @@
 <html lang="en">
 <head xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>User</title>
+    <style>
+        .horiz {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            border-bottom: blue dashed thin;
+            padding-bottom: 20px;
+        }
+
+        .left-div {
+            height: 100%;
+            width: 33%;
+            border-right-style: solid;
+            border-right-width: thin;
+            border-right-color: #94add2;
+            padding-left: 30px;
+            padding-top: 30px;
+        }
+
+        .right-div {
+            height: 100%;
+            width: 50%;
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .header-div {
+            display: inline-block;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            width: 100%;
+            border-bottom: #94add2 thin solid;
+        }
+
+        .inputs {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-size: large;
+        }
+
+        label {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-left: 20px;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            alignment: right;
+            margin: auto;
+        }
+
+        thead, tbody {
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
+
+    <header>
+        <div>
+            <h3 class="header-div">
+                MyBatis e-book
+            </h3>
+        </div>
+    </header>
+
+    <div class="horiz">
+        <div class="left-div">
+            <div class="inputs">
+                <label> Login
+                    <input type="email" placeholder="Enter login">
+                </label>
+                <label> Name
+                    <input type="text" placeholder="Enter name">
+                </label>
+                <label> Password
+                    <input type="password" placeholder="Enter password">
+                </label>
+            </div>
+            <div class="horiz">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Log out</button>
+                <button type="button" class="btn btn-link" href="#">Back to book</button>
+            </div>
+        </div>
+
+        <div class="right-div">
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                <tr>
+                    <th>Theme</th>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th>Result</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>First</td>
+                    <td>How ?</td>
+                    <td> As </td>
+                    <td> + </td>
+                </tr>
+                <tr>
+                    <td>First</td>
+                    <td>How ?</td>
+                    <td> As </td>
+                    <td> + </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </body>
 </html>
