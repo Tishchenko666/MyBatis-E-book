@@ -7,20 +7,22 @@
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Login</title>
     <style>
-        .vertical-center{
+        .vertical-center {
             padding: 300px;
             text-align: center;
         }
-        .inputs{
+
+        .inputs {
             display: flex;
             justify-content: center;
             flex-direction: column;
         }
 
-        div{
+        div {
             margin: 40px;
         }
-        label{
+
+        label {
             margin: 10px;
         }
     </style>
@@ -28,16 +30,18 @@
 <body>
 
     <div class="vertical-center">
-        <h3>Sign In</h3>
-        <div class="inputs">
-            <label>
-                <input type="email" placeholder="Enter login">
-            </label>
-            <label>
-                <input type="password" placeholder="Enter password">
-            </label>
-        </div>
-        <button type="submit">Sign in</button>
+        <form action="#" th:action="@{/user/login}" th:object="${user}" method="post">
+            <h3>Sign In</h3>
+            <div class="inputs">
+                <label>
+                    <input type="email" placeholder="Enter login" th:field="*{login}">
+                </label>
+                <label>
+                    <input type="password" placeholder="Enter password" th:field="*{password}">
+                </label>
+            </div>
+            <input type="submit" value="Sign in" class="btn btn-primary">
+        </form>
     </div>
 
 

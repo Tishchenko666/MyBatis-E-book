@@ -3,6 +3,7 @@ package com.tish.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tish.dao.MaterialDao;
+import com.tish.entity.Material;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,10 @@ public class MaterialService {
 
 	public LinkedHashMap<String, String> readMaterialById(Integer id) {
 		try {
-			return mapper.readValue(materialDao.readMaterialById(id).getData(), LinkedHashMap.class);
+			Material material = materialDao.readMaterialById(id);
+			LinkedHashMap<String, String> map = mapper.readValue(material.getData(), LinkedHashMap.class);
+			map.put("title", material.getTitle());
+			return map;
 		} catch (JsonProcessingException e) {
 			throw new RuntimeException(e);
 		}

@@ -26,6 +26,7 @@ public class MaterialController {
 	public String openFirstPage(Model model) {
 
 		checkLoggedUser(model);
+		model.addAttribute("materialMap", materialService.readMaterialById(1));
 
 		return "index";
 	}

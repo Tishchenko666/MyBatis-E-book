@@ -9,11 +9,15 @@
     <style>
         .ited {
             font-style: italic;
-
+            font-size: 30px;
         }
 
-        .bolded {
-            font-weight: bold;
+        .norm {
+            font-size: 30px;
+        }
+
+        .subtitle {
+            font-size: 50px;
         }
 
         .horiz {
@@ -32,12 +36,11 @@
 
         .menu-size {
             height: 100%;
-            width: 33%;
+            width: 70%;
         }
 
         .li-content {
             list-style-type: none;
-            font-size: 40px;
         }
 
         #test-button {
@@ -65,6 +68,11 @@
             display: inline-block;
             margin-left: 200px;
         }
+        p {
+            font-size: 50px;
+            font-weight: bold;
+            padding-left: 25px;
+        }
     </style>
 </head>
 <body>
@@ -75,8 +83,10 @@
                 MyBatis e-book
             </h3>
             <div class="link-div">
-                <a href="#">Register</a>
-                <a href="#">Login</a>
+                <a href="#" th:if="${isLoggedIn} == true" th:text="${userLogin}"></a>
+                <a class="btn border-primary" href="#" th:if="${isLoggedIn} == true" th:href="@{/user/logout(login=${userLogin})}" >Log out</a>
+                <a href="#" th:if="${isLoggedIn} == false" th:href="@{/user/register}">Register</a>
+                <a href="#" th:if="${isLoggedIn} == false" th:href="@{/user/login}">Login</a>
             </div>
 
         </div>
@@ -85,28 +95,27 @@
     <div class="horiz">
         <div class="navbar-nav flex-column menu-size">
             <ul class="nav-item menu-item">
-                <li><a href="#">First</a></li>
-                <li><a href="#">Second</a></li>
-                <li><a href="#">Third</a></li>
+                <li><a href="#" th:href="@{/material/index}">Overview</a></li>
+                <li><a href="#" th:href="@{/material/{id}(id=2)}">1. Import, Configuration</a></li>
+                <li><a href="#" th:href="@{/material/{id}(id=3)}">1.1. Xml Configuration</a></li>
             </ul>
         </div>
         <div>
-            <ul th:each="item: ${myMap}">
-                <li class="li-content border border-primary" th:if="${item.key.startsWith('data')}" th:class="ited "
+            <p th:text="${materialMap.get('title')}"></p>
+            <ul class="li-content" th:each="item: ${materialMap}">
+                <li th:if="${item.key.startsWith('sub')}" th:class="subtitle"
                     th:text="${item.value}">
-                    Text
                 </li>
-                <li class="li-content" th:if="${item.key.startsWith('test')}" th:class="bolded" th:text="${item.value}">
-                    Test
+                <li th:if="${item.key.startsWith('text')}" th:class="norm"
+                    th:text="${item.value}">
                 </li>
-                <li class="li-content ited border border-primary">
-                    Test text border
+                <li th:if="${item.key.startsWith('code')}" th:class="ited"
+                    th:text="${item.value}">
                 </li>
-
             </ul>
         </div>
     </div>
-    <button id="test-button" type="button" class="btn btn-primary">Pass Test</button>
+    <button id="test-button" th:type="link" href="#" class="btn btn-primary">Pass Test</button>
 
 
 </body>

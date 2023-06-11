@@ -20,7 +20,8 @@ public class UserController {
 	}
 
 	@GetMapping("/login")
-	public String openLoginPage() {
+	public String openLoginPage(Model model) {
+		model.addAttribute("user", new User());
 		return "login-page";
 	}
 
@@ -46,7 +47,7 @@ public class UserController {
 		return "redirect:/material/index";
 	}
 
-	@PostMapping("/logout")
+	@GetMapping("/logout")
 	public String logout(@RequestParam String login) {
 
 		userService.logoutByEmail(login);
@@ -55,7 +56,8 @@ public class UserController {
 	}
 
 	@GetMapping("/register")
-	public String openRegisterPage() {
+	public String openRegisterPage(Model model) {
+		model.addAttribute("user", new User());
 		return "register-page";
 	}
 
@@ -89,10 +91,10 @@ public class UserController {
 	}
 
 	@PostMapping("/account/update")
-	public String saveUserDataChanges(@ModelAttribute("user") User user) {
+	public String saveUserDataChanges(@ModelAttribute("user") User user, Model model) {
 		userService.updateUserData(user);
 
-		return "redirect:/user/account/" + user.getLogin();
+		return "redirect:/user/account?login=" + user.getLogin();
 	}
 
 

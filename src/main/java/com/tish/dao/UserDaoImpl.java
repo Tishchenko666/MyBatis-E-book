@@ -6,6 +6,7 @@ import com.tish.entity.UserResult;
 import com.tish.mapper.UserMapper;
 import com.tish.mapper.UserResultMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -23,7 +24,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User checkIfUserExists(String email) {
-		return jdbcTemplate.queryForObject(UserConstant.CHECK_USER_BY_EMAIL, new Object[]{email}, new int[]{Types.VARCHAR}, new UserMapper());
+		try {
+			return jdbcTemplate.queryForObject(UserConstant.CHECK_USER_BY_EMAIL, new Object[]{email}, new int[]{Types.VARCHAR}, new UserMapper());
+		} catch (DataAccessException e) {
+			return null;
+		}
 	}
 
 	@Override
@@ -38,7 +43,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User checkIfLoggedUserExists() {
-		return jdbcTemplate.queryForObject(UserConstant.CHECK_LOGGED_USER, new UserMapper());
+		try {
+			return jdbcTemplate.queryForObject(UserConstant.CHECK_LOGGED_USER, new UserMapper());
+		} catch (DataAccessException e) {
+			return null;
+		}
 	}
 
 	@Override
@@ -48,7 +57,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<UserResult> readUserResultsById(Integer id) {
-		return jdbcTemplate.query(UserConstant.READ_USER_RESULTS, new Object[]{id}, new int[]{Types.INTEGER}, new UserResultMapper());
+		try {
+			return jdbcTemplate.query(UserConstant.READ_USER_RESULTS, new Object[]{id}, new int[]{Types.INTEGER}, new UserResultMapper());
+		} catch (DataAccessException e) {
+			return null;
+		}
 	}
 
 	@Override
