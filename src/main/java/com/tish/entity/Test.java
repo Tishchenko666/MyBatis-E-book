@@ -8,7 +8,7 @@ import lombok.Data;
 public class Test {
 
 	private Integer id;
-	private String materialOrder;
+	private Integer materialId;
 	private Integer type;
 	private String question;
 	private String variants;

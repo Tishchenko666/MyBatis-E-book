@@ -17,7 +17,7 @@ public class UserResultMapper implements RowMapper<UserResult> {
 		userResult.setMaterial(rs.getString("title"));
 		userResult.setQuestion(rs.getString("question"));
 		userResult.setAnswer(rs.getString("answer"));
-		userResult.setResult(rs.getInt("result") != 0);
+		userResult.setResult(rs.getInt("result"));
 
 		return userResult;
 	}

@@ -1,8 +1,10 @@
 package com.tish.dao;
 
 import com.tish.constant.UserConstant;
+import com.tish.entity.Test;
 import com.tish.entity.User;
 import com.tish.entity.UserResult;
+import com.tish.mapper.TestMapper;
 import com.tish.mapper.UserMapper;
 import com.tish.mapper.UserResultMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Types;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -57,11 +60,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<UserResult> readUserResultsById(Integer id) {
-		try {
-			return jdbcTemplate.query(UserConstant.READ_USER_RESULTS, new Object[]{id}, new int[]{Types.INTEGER}, new UserResultMapper());
-		} catch (DataAccessException e) {
-			return null;
-		}
+		return jdbcTemplate.query(UserConstant.READ_USER_RESULTS, new Object[]{id}, new int[]{Types.INTEGER}, new UserResultMapper());
 	}
 
 	@Override

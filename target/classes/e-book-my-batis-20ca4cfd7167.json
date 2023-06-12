@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "e-book-my-batis",
+  "private_key_id": "20ca4cfd7167882fcb833626d4ca3d99f9c6f1f7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCM/ieVY6DPckxm\nnf8RXQfsSIlpflfIeHSkLw6yeK7pGhd9BLw1BZn2QiOdkrppRuuR2GGq3xE2qZH6\nXlciWSKRfD6bYMLSowTlRF2ELwCExb1KShAKQFWJHjm2qrakzaiUTD1lkPlhjuRk\n3xCFpCpcuIEixKQm4uzolOPgnYxxk8+ngdSIkk3AJO+ns1ULRflAXY3y9zCuSAQz\nm3mx5OQcsHVqTHtCsZKlHYOL2pc9+6eEAkR1xq5qnKFtxvSeDLJ+7J7b0L8g4nTl\ngbJJ0QuaT6cKeM9lTwPISqcXAdg2Kynpwk22Rwj0oHGW0W7e55nTpQjk7yYYd4qY\n4x7aY2GrAgMBAAECggEAGk/iBjyaCazMekgZDl38uQlOb5wO+NAWAH/xr7fa+JCQ\nepnUH9cERRNRvznfRP9hvg2SKIfJmBhsMDvD6hqVW25C5s9XfGTE6J5qD12QLLcU\nXNVWifs4m0bDQYY5YKcqw0Y5HQfBqoW2tOZ2GGKrLzOVke39rm4iBUOoBUaRq65B\noz7MK89mvORgMrROyR3TUBn0hSwvRhmrPuOvYGLTsKilHeURMkgl+86ndq7pur0S\nF5ByVmsTORSE6+FYz0PoLv9Btw9xRnLXbtJnKByMRGHXFt7pVvJd5Eo9wddzkNsy\nL1bqHP8igd3x1wsYKJ7Eu9sN9AkW7Us8Fa803UUriQKBgQDAg0c8kPCuj3hfd/vQ\npc3vPUgKQaw/SyTJ4Gac3F751D/DbJlyuHpBjKlQ3w+zr2pPrnMp3Xe70lpAhheh\ndArw14FSo3e2PyzRfejR0AUFTZUVSnoqEKIrQOj+fKxB9eTeRqlwAg7swUnfvV+x\nB5cSfRc+xwNIGtshZt77EbCc6QKBgQC7fVhcEfjKBRUSOxJsA1SNNfkLm2z9H61j\nUVWoCI9NHup/w/zrOpNoqkIf6doGJzPrfbhXLvExiCh3MD98LTRuoc+QiH2IJWjH\n99vmNexK71IaF4eAJjlvIvX8s/iEls86Het3kljgxCGb+Exirk0eszXp3iSSHgJb\n9++trgKdcwKBgESNOsu1bQ8r5ZhRWGkm8ZsUflewpQ5wyqvcbY3D50odK4uCW23/\nhQFcflpe4+9/MmMnYrjwtRc7w4mgdj+228KBavqrXRCXlHUQ2dwEsBUAWGsZd0EN\nZUHzvkQIzyo5zoLcNK++++OQvKagf7fBVSlvQ9zF70Q40/kj8ZkD5pkpAoGBAKrv\nHm3inLZiZ9GVNbhwWNfdi08/xuAHz2arMrLeCvg+5YDSyHYVk2trPpol9HaDq1xZ\n5ITn8VI9VtdDj73A4Pq0X67gIcLMiHk3yq5aHzI6etn69biqINboQui/lCYd8JSF\nzrXXIVzas+GlQM7/JqSEsvSjaSgmX/RFWak46n1tAoGBAL+dlVM/rdaLCrRGiy8E\nitzpMJ7hZNMQARes1/uq4j3t+J6IkfPueFA/u5C9xZIJdxjCLdbc7UfWHo47n1qQ\n8bc2Tc2T1fbE4m0Tt9vY65Lk8T55CeQ2BMeodN3js/To+PuG8wWrK6kv9B57+Wr2\nS/sccBC3PzRFeFtVto+Pdy9f\n-----END PRIVATE KEY-----\n",
+  "client_email": "e-book-sa@e-book-my-batis.iam.gserviceaccount.com",
+  "client_id": "107345574639186723976",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/e-book-sa%40e-book-my-batis.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

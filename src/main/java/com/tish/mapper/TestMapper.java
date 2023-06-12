@@ -13,7 +13,7 @@ public class TestMapper implements RowMapper<Test> {
 		Test test = new Test();
 
 		test.setId(rs.getInt("id"));
-		test.setMaterialOrder(rs.getString("material_order"));
+		test.setMaterialId(rs.getInt("material_id"));
 		test.setType(rs.getInt("type"));
 		test.setQuestion(rs.getString("question"));
 		test.setVariants(rs.getString("variants"));
