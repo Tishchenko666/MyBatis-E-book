@@ -9,6 +9,7 @@ public class Test {
 
 	private Integer id;
 	private Integer materialId;
+	private String title;
 	private Integer type;
 	private String question;
 	private String variants;

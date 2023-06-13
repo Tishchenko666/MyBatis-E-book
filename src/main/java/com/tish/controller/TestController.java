@@ -21,24 +21,12 @@ public class TestController {
 	private final JdbcTemplate jdbcTemplate;
 	private final MaterialDaoImpl materialDao;
 
-	private final TestService testService;
-
 	public TestController(@Autowired ObjectMapper objectMapper,
 						  @Autowired JdbcTemplate jdbcTemplate,
-						  @Autowired MaterialDaoImpl materialDao, TestService testService) {
+						  @Autowired MaterialDaoImpl materialDao) {
 		this.mapper = objectMapper;
 		this.jdbcTemplate = jdbcTemplate;
 		this.materialDao = materialDao;
-		this.testService = testService;
-	}
-
-	@GetMapping("/test/{id}")
-	public String openTest(Model model, @PathVariable Integer id) {
-
-		Map<String, String> map = testService.openTest();
-		Boolean isPublished = testService.publishForm(map.get("formId"), map.get("token"));
-
-		return "redirect:https://docs.google.com/forms/d/" + map.get("formId");
 	}
 
 

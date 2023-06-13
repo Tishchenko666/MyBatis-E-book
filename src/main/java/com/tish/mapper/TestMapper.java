@@ -14,6 +14,7 @@ public class TestMapper implements RowMapper<Test> {
 
 		test.setId(rs.getInt("id"));
 		test.setMaterialId(rs.getInt("material_id"));
+		test.setTitle(rs.getString("title"));
 		test.setType(rs.getInt("type"));
 		test.setQuestion(rs.getString("question"));
 		test.setVariants(rs.getString("variants"));

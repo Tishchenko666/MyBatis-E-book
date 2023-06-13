@@ -58,16 +58,17 @@
             margin-bottom: 10px;
         }
 
-        .header-div{
+        .header-div {
             padding-top: 20px;
             display: inline-block;
         }
 
-        .link-div{
+        .link-div {
             padding-top: 20px;
             display: inline-block;
             margin-left: 200px;
         }
+
         p {
             font-size: 50px;
             font-weight: bold;
@@ -78,13 +79,15 @@
 <body>
 
     <header>
-        <div >
+        <div>
             <h3 class="header-div">
                 MyBatis e-book
             </h3>
             <div class="link-div">
-                <a href="#" th:if="${isLoggedIn} == true" th:text="${userLogin}"></a>
-                <a class="btn border-primary" href="#" th:if="${isLoggedIn} == true" th:href="@{/user/logout(login=${userLogin})}" >Log out</a>
+                <a href="#" th:if="${isLoggedIn} == true" th:text="${userLogin}"
+                   th:href="@{/user/account(login=${userLogin})}"></a>
+                <a class="btn border-primary" href="#" th:if="${isLoggedIn} == true"
+                   th:href="@{/user/logout(login=${userLogin})}">Log out</a>
                 <a href="#" th:if="${isLoggedIn} == false" th:href="@{/user/register}">Register</a>
                 <a href="#" th:if="${isLoggedIn} == false" th:href="@{/user/login}">Login</a>
             </div>
@@ -98,6 +101,8 @@
                 <li><a href="#" th:href="@{/material/index}">Overview</a></li>
                 <li><a href="#" th:href="@{/material/{id}(id=2)}">1. Import, Configuration</a></li>
                 <li><a href="#" th:href="@{/material/{id}(id=3)}">1.1. Xml Configuration</a></li>
+                <li><a href="#" th:href="@{/material/{id}(id=4)}">1.2. Plugins and Environment</a></li>
+                <li><a href="#" th:href="@{/material/{id}(id=5)}">-- Creative task 1</a></li>
             </ul>
         </div>
         <div>
@@ -115,8 +120,8 @@
             </ul>
         </div>
     </div>
-    <a id="test-button" th:type="link" th:href="@{/test/{id}(id=2)}" class="btn btn-primary">Pass Test</a>
-
+    <a id="test-button" th:href="@{https://docs.google.com/forms/d/{id}(id=${formId})}" class="btn btn-primary"
+       target="_blank">Pass Test</a>
 
 </body>
 </html>
